@@ -65,7 +65,7 @@ There are following stages:
 
 ## The Final Data Set
 
-The data available in final data set '''tidy.txt''' are described below:
+The data available in final data set ```tidy.txt``` are described below:
   -  subject - ID of the volunteer in the motion data study
   -  activity - a descriptive name of the predetermined movements for the volunteers
   -  The following measurements are present in both average [mean()] and average standard deviation [std()] for each       activity and subject (the meaning of each measurement can be found in features_info.txt):
