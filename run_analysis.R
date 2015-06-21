@@ -1,17 +1,17 @@
-## Import all data files
-    testx <- read.table("./test/X_test.txt")
+## Importing the data set files
+    testX <- read.table("./test/X_test.txt")
     testy <- read.table("./test/y_test.txt")
     testsub <- read.table("./test/subject_test.txt")
-    trainx <- read.table("./train/X_train.txt")
+    trainX <- read.table("./train/X_train.txt")
     trainy <- read.table("./train/y_train.txt")
     trainsub <- read.table("./train/subject_train.txt")
     activitylabels <- read.table("./activity_labels.txt")
     features <- read.table("./features.txt")
-## Give column names to activitylabels and features
+## Giving column names to activitylabels and features
     colnames(activitylabels) <- c("activityid","activityname")
     colnames(features) <- c("ID","varName")
 
-## Task 1: Merges the training and tests sets to create one data set
+## Merges the training and tests sets to create one data set
     ## Combine data individual data sets with test data followed by train data
     ## I determined that these could be combined, given the dimensions of the data sets
     ## subdata will be 1 column wide, 10299 observations
@@ -28,7 +28,7 @@
         masterdata$subject <- subdata$V1
         masterdata$activity <- ydata$V1
 
-## Task 3: Uses descriptive activity names to name the activities in the data set
+## Uses descriptive activity names to name the activities in the data set
     ## Apply descriptive activity labels, using activity_labels.txt
         masterdata$activity <- as.character(masterdata$activity)
         masterdata$activity[masterdata$activity == 1] <- "Walking"
@@ -39,13 +39,13 @@
         masterdata$activity[masterdata$activity == 6] <- "Laying"
         masterdata$activity <- as.factor(masterdata$activity)
 
-## Task 4: Appropriately labels the data set with descriptive variable names
+## Appropriately labels the data set with descriptive variable names
     ## Perused names(masterdata) and features_info.txt to determine meanings of abbreviations
         names(masterdata) <- gsub("Acc","Accelerometer",names(masterdata))
         names(masterdata) <- gsub("Mag","Magnitude",names(masterdata))
         names(masterdata) <- gsub("Gyro","Gyroscope",names(masterdata))
 
-## Task 2: Extracts only the measurements on the mean and standard deviation for each measurement
+## Extracts only the measurements on the mean and standard deviation for each measurement
     ## Create list of mean() variables, another of std() variables
         meandata <- grep("mean()",names(masterdata),value=F,fixed=T)
         stddata <- grep("std()",names(masterdata),value=F,fixed=T)
@@ -58,7 +58,7 @@
         names(masterdata2)[1] <- "subject"
         names(masterdata2)[2] <- "activity"
     
-## Task 5: From the data set in Task 4, creates a second, independent tidy data set with the average
+## Creates a second, independent tidy data set with the average
 ## of each variable for each activity and each subject
     ## Initialize data.table package
         library(data.table)
