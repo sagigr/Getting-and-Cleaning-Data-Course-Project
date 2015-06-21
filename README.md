@@ -7,10 +7,12 @@ The run_analyis.R - it is the R script that does the following:
 * Appropriately labels the data set with descriptive variable names. 
 * Creates a second, new independent tidy data set with the average of each variable for each activity and each subject.
 
-The data for this script can be found at: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+The data linked to from the course website represent data collected from the accelerometers from the Samsung Galaxy S smartphone. A full description is available at the site where the data was obtained: 
+http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
 
-A full description is available at the site where the data was obtained: 
-http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+Here are the data for the project: 
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
+
 
 To run the script, the R working directory should be set to the unzipped file UCI HAR Dataset folder. The final, tidy data set will be created in this file as well.
 
