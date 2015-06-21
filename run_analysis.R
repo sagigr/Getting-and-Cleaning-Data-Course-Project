@@ -64,4 +64,4 @@
         library(data.table)
         masterdata2 <- data.table(masterdata2)
         tidy <- masterdata2[,lapply(.SD,mean),by='subject,activity']
-        write.table(tidy,file="tidy.txt",row.name=F)
+        write.table(tidy,file="tidy.txt",row.name=F) 
