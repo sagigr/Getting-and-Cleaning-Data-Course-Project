@@ -22,9 +22,9 @@ For each record in the dataset it is provided:
 * Its activity label. 
 * An identifier of the subject who carried out the experiment.
 
-## The data
+## The Data Set Files
 
-The dataset includes the following files:
+The data set includes the following files:
 
 - 'README.txt'
 
@@ -42,20 +42,20 @@ The dataset includes the following files:
 
 - 'test/y_test.txt': Test labels.
 
-The following files are available for the train and test data. Their descriptions are equivalent.
+The following files are available for the train and test data. Their descriptions are equivalent. 
 
-- 'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30.
+- 'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
 
-- 'train/Inertial Signals/total_acc_x_train.txt': The acceleration signal from the smartphone accelerometer X axis in standard gravity units 'g'. Every row shows a 128 element vector. The same description applies for the 'total_acc_x_train.txt' and 'total_acc_z_train.txt' files for the Y and Z axis.
+- 'train/Inertial Signals/total_acc_x_train.txt': The acceleration signal from the smartphone accelerometer X axis in standard gravity units 'g'. Every row shows a 128 element vector. The same description applies for the 'total_acc_x_train.txt' and 'total_acc_z_train.txt' files for the Y and Z axis. 
 
-- 'train/Inertial Signals/body_acc_x_train.txt': The body acceleration signal obtained by subtracting the gravity from the total acceleration.
+- 'train/Inertial Signals/body_acc_x_train.txt': The body acceleration signal obtained by subtracting the gravity from the total acceleration. 
 
-- 'train/Inertial Signals/body_gyro_x_train.txt': The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second.
+- 'train/Inertial Signals/body_gyro_x_train.txt': The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second. 
 
 
-## Transformation details
+## Transformation Details
 
-There are 5 parts:
+There are following stages:
 
 1. Merges the training and the test sets to create one data set.
 2. Extracts only the measurements on the mean and standard deviation for each measurement.
@@ -63,23 +63,9 @@ There are 5 parts:
 4. Appropriately labels the data set with descriptive activity names.
 5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
-## How ```run_analysis.R``` implements the above steps:
+## The Final Data Set
 
-* Require ```reshapre2``` and ```data.table``` librareis.
-* Load both test and train data
-* Load the features and activity labels.
-* Extract the mean and standard deviation column names and data.
-* Process the data. There are two parts processing test and train data respectively.
-* Merge data set.
-
-
-run_analyis.R - script for concatenating data sets and making a final tidy data set based on Galaxy S motion data collected from volunteers performing preset activities
-
-The data for this script can be found at: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
-
-This script uses the unzipped data set (download URL above) to create a tidy data set of mean() and std() motion variables collected using Galaxy S smartphones worn by volunteers performing pre-determined activities.
-
-The data available in final data set (tidy.txt) are described below:
+The data available in final data set '''tidy.txt''' are described below:
   -  subject - ID of the volunteer in the motion data study
   -  activity - a descriptive name of the predetermined movements for the volunteers
   -  The following measurements are present in both average [mean()] and average standard deviation [std()] for each       activity and subject (the meaning of each measurement can be found in features_info.txt):
